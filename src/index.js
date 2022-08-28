@@ -1,11 +1,10 @@
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
+
 import { fetchCountries } from './fetchCountries';
 import { makeMarkupCountries } from './markup';
 import { makeMarkupCountry } from './markup';
 import { clearMarkup } from './markup';
 import './css/styles.css';
-
-const DEBOUNCE_DELAY = 300;
 
 export function onInputChange(e) {
   // сразу вызываем очистку разметки

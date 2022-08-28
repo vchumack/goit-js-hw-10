@@ -1,13 +1,16 @@
 import debounce from 'lodash.debounce';
 import { onInputChange } from './index';
 
+const DEBOUNCE_DELAY = 300;
+
 const refs = {
   input: document.querySelector('#search-box'),
   ul: document.querySelector('.country-list'),
   div: document.querySelector('.country-info'),
 };
 
-refs.input.addEventListener('input', debounce(onInputChange, 300));
+refs.input.addEventListener('input', debounce(onInputChange, DEBOUNCE_DELAY));
+
 // функция для разметки списка стран
 export function makeMarkupCountries(countries) {
   const markup = countries.map(({ flags: { svg }, name: { official } }) => {
